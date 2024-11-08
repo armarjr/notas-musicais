@@ -5,8 +5,13 @@ description = ""
 authors = ["armarjr <armarcm.job@gmail.com>"]
 readme = "README.md"
 
+[tool.poetry.scripts]
+escalas = "notas_musicais.cli:app"
+
 [tool.poetry.dependencies]
 python = "^3.11"
+typer = "^0.12.5"
+rich = "^13.9.4"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -34,8 +39,8 @@ profile = "black"
 line_length = 79
 
 [tool.taskipy.tasks]
-lint = "blue --check --diff . &&isort --check --diff ."
+lint = "blue --check --diff . && isort --check --diff ."
 docs = "mkdocs serve"
-pre-test = "task lint"
+pre_test = "task lint"
 test = "pytest -s -x --cov=notas_musicais -vv"
-post-test = "coverage html"
+post_test = "coverage html"

@@ -1,14 +1,15 @@
 ![Logo do Projeto](assets/logo.png){ width="200" .center}
 # Notas Musicais
+Notas musicais é um CLI para ajudar na formação de escalas e acordes.
+Temos 2 comandos disponíveis `escalas` e `acordes`
 
+## Como usar ?
 
-## Como usar:
+###Escalas :
 
 Voce pode chamar escalas via linha de terminal. Por exemplo:
-
 ```bash
-
-poetry run escalas
+poetry run notas-musicais escala
 ```
 
 Retornando os graus e as notas correspondentes a essa escala :
@@ -22,12 +23,12 @@ Retornando os graus e as notas correspondentes a essa escala :
 └───┴────┴─────┴────┴───┴────┴─────┘
 ```
 
-### Alteraçao na escala
+#### Alteraçao na escala
 
 O primeiro parametro do CLI é a tonica da escala que deseja exibir. desta forma voce pode alterar a escala a ser exibida. Por exemplo escala de F#
 
 ```bash
-poetry run escalas F#
+poetry run notas-musicais escala F#
 ```
 Retorna :
 
@@ -40,10 +41,12 @@ Retorna :
 
 ```
 
-## Voce pode alterar a tonalidade da escala. Este é o segundo parametro da linha de comando. Por exemplo a escala de 'D#' maior
+#### Alteração na tonalidade da escala. 
+
+Este é o segundo parametro da linha de comando. Por exemplo a escala de 'D#' maior
 
 ```bash
-poetry run escalas D# maior
+poetry run notas-musicais escala D# menor
 
 ```
 Retornando:
@@ -51,15 +54,40 @@ Retornando:
 ┏━━━━┳━━━━┳━━━━━┳━━━━┳━━━━┳━━━━┳━━━━━┓
 ┃ I  ┃ II ┃ III ┃ IV ┃ V  ┃ VI ┃ VII ┃
 ┡━━━━╇━━━━╇━━━━━╇━━━━╇━━━━╇━━━━╇━━━━━┩
-│ D# │ F  │ G   │ G# │ A# │ C  │ D   │
+│ D# │ F  │ F#  │ G# │ A# │ B  │ C#  │
 └────┴────┴─────┴────┴────┴────┴─────┘
+```
+
+##$Acordes 
+Uso basico
 
 ```
-## Mais informaçoes sobre o CLI
+poetry run notas-musicais acorde
+
+┏━━━┳━━━━━┳━━━┓
+┃ I ┃ III ┃ V ┃
+┡━━━╇━━━━━╇━━━┩
+│ C │ E   │ G │
+└───┴─────┴───┘
+```
+### Variações na Cifra
+
+```
+poetry run notas-musicais acorde C+
+┏━━━┳━━━━━┳━━━━┓
+┃ I ┃ III ┃ V+ ┃
+┡━━━╇━━━━━╇━━━━┩
+│ C │ E   │ G# │
+└───┴─────┴────┘
+```
+Até o momento voce pode utilizar acordes maiores, menores, aumentados e diminutos
+
+
+#### Mais informaçoes sobre o CLI
 Para descobrir outras opçoes, voce pode usar a flag `--help` :
 
 ```bash
-poetry run escalas --help
+poetry run notas-musicais --help
 
 
  Usage: escalas [OPTIONS] [TONICA] [TONALIDADE]                                                                 

@@ -1,16 +1,22 @@
 ![Logo do Projeto](assets/logo.png){ width="200" .center}
 # Notas Musicais
 Notas musicais é um CLI para ajudar na formação de escalas, acordes e campos harmonicos.
-Temos 2 comandos disponíveis `escalas` e `acordes`
 
 Toda a aplicação é baseada em um comando chamado `notas-musicais`. Esse comando tem um subcomando aplicado a cada ação que a aplicação pode realizar. Como `escalas`, `acordes` e `campos-hamonicos`
+
+{% include "templates/cards.html" %}
+
+
+{% include "templates/instalacao.md" %}
+
 ## Como usar ?
 
 ###Escalas:
 
 Voce pode chamar escalas via linha de terminal. Por exemplo:
+
 ```bash
-poetry run notas-musicais escala
+{{ commands.run }} escala
 ```
 
 Retornando os graus e as notas correspondentes a essa escala :
@@ -29,7 +35,7 @@ Retornando os graus e as notas correspondentes a essa escala :
 O primeiro parametro do CLI é a tonica da escala que deseja exibir. desta forma voce pode alterar a escala a ser exibida. Por exemplo escala de F#
 
 ```bash
-poetry run notas-musicais escala F#
+{{ commands.run }} escala F#
 ```
 Retorna :
 
@@ -47,7 +53,7 @@ Retorna :
 Este é o segundo parametro da linha de comando. Por exemplo a escala de 'D#' maior
 
 ```bash
-poetry run notas-musicais escala D# menor
+{{ commands.run }} escala D# menor
 
 ```
 Retornando:
@@ -63,7 +69,7 @@ Retornando:
 Uso basico
 
 ```
-poetry run notas-musicais acorde
+{{ commands.run }} acorde
 
 ┏━━━┳━━━━━┳━━━┓
 ┃ I ┃ III ┃ V ┃
@@ -74,7 +80,7 @@ poetry run notas-musicais acorde
 #### Variações na Cifra
 
 ```
-poetry run notas-musicais acorde C+
+{{ commands.run }} acorde C+
 ┏━━━┳━━━━━┳━━━━┓
 ┃ I ┃ III ┃ V+ ┃
 ┡━━━╇━━━━━╇━━━━┩
@@ -88,7 +94,7 @@ Até o momento voce pode utilizar acordes maiores, menores, aumentados e diminut
 
 Vocẽ pode chamar os campos harmonicos via subcomando `campo-harmonicos`
 ```
-poetry run notas-musicais campo-harmonico
+{{ commands.run }} campo-harmonico
 
 ┏━━━┳━━━━┳━━━━━┳━━━━┳━━━┳━━━━┳━━━━━━┓
 ┃ I ┃ ii ┃ iii ┃ IV ┃ V ┃ vi ┃ vii° ┃
@@ -102,12 +108,12 @@ Por padão os parametros utlizados são a tonica de `C` e  campo harmonico `meno
 #### Alterações nos campos harmonicos
 Voce pode alterar os parametros da tonica e da tonalidade
 ```bash
-poetry run notas-musicais campo-harmonico [TONICA] [TONALIDADE]
+{{ commands.run }} campo-harmonico [TONICA] [TONALIDADE]
 ```
 #### Alterações na tonica do campo
 Um exemplo com campo harmonico de `E`
 ```bash
-poetry run notas-musicais campo-harmonico E
+{{ commands.run }} campo-harmonico E
 
 ┏━━━┳━━━━━┳━━━━━┳━━━━┳━━━┳━━━━━┳━━━━━━┓
 ┃ I ┃ ii  ┃ iii ┃ IV ┃ V ┃ vi  ┃ vii° ┃
@@ -119,7 +125,7 @@ poetry run notas-musicais campo-harmonico E
 #### Alterações na tonalidade do campo
 Um exemplo com campo harmonico de `E` com tonalidade `menor`
 ```bash
-poetry run notas-musicais campo-harmonico E menor
+{{ commands.run }} campo-harmonico E menor
 ┏━━━━┳━━━━━┳━━━━━┳━━━━┳━━━━┳━━━━┳━━━━━┓
 ┃ i  ┃ ii° ┃ III ┃ iv ┃ v  ┃ VI ┃ VII ┃
 ┡━━━━╇━━━━━╇━━━━━╇━━━━╇━━━━╇━━━━╇━━━━━┩
@@ -131,7 +137,7 @@ poetry run notas-musicais campo-harmonico E menor
 Para descobrir outras opções, voce pode usar a flag `--help` :
 
 ```bash
-poetry run notas-musicais --help
+{{ commands.run }} --help
 ```
 ```
  Usage: notas-musicais [OPTIONS] COMMAND [ARGS]...                                                               
@@ -154,7 +160,7 @@ As informações sobre os subcomandos podem ser acessadas com a flag `--help` ap
 Um exemplo da flag `--help` nos campos harmonicos:
 
 ```bash
-poetry run notas-musicais campo-harmonico --help
+{{ commands.run }} campo-harmonico --help
 
  Usage: notas-musicais campo-harmonico [OPTIONS] [TONICA] [TONALIDADE]                                           
                                                                                                                  

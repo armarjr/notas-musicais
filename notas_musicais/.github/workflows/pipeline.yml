@@ -10,5 +10,3 @@ jobs:
 
       - name: Roda um comando
         run: echo $(ls)
-
-    

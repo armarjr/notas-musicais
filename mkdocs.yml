@@ -2,6 +2,7 @@ site_name: Notas Musicais
 repo_url: https://github.com/armarjr/notas-musicais
 repo_name: armarjr/notas-musicais
 edit_uri: tree/main/docs
+
 theme: 
   name: material
   language: pt-BR
@@ -10,15 +11,31 @@ theme:
 
 markdown_extensions: 
   - attr_list
+  - admonition
+  - pymdownx.tasklist
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_css:
   - stylesheets/extra.css
 
 watch:
   - notas_musicais
-  
-plugins: 
+
+plugins:
+- macros
+
 - mkdocstrings:
     handlers:
       python:
         paths: [notas_musicais]
+
+extra:
+  commands:
+    run: notas-musicais

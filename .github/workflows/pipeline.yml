@@ -14,4 +14,4 @@ jobs:
       - name: Instalar o poetry
         run: pip install poetry
       - name: Instalar dependencias do projeto
-        run: poetry install
+        run: poetry install --without doc 

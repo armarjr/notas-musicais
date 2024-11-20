@@ -30,7 +30,6 @@ pip install notas-musicais
 
 Você pode chamar as escalas via linha de comando. Por exemplo:
 
-
 ```bash
 notas-musicais escala
 ```

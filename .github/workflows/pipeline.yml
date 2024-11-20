@@ -20,3 +20,8 @@ jobs:
       
       - name: Rodar os testes
         run: poetry run task test
+
+      - name: Subir cobertura para codecov
+        uses:  codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

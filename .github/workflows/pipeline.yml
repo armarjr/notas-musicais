@@ -11,7 +11,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Instalar o poetry
         run: pip install poetry
+
       - name: Instalar dependencias do projeto
-        run: poetry install --without doc 
+        run: poetry install --without doc
+      
+      - name: Rodar os testes
+        run: poetry run task test

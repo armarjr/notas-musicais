@@ -13,3 +13,6 @@ jobs:
         with:
           python-version: '3.11'
 
+      -name: Instalar o poetry
+       run: pip install poetry
+
